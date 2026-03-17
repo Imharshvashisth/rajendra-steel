@@ -1,0 +1,390 @@
+/* =========================================
+           ROOT VARIABLES & GLOBAL STYLES
+           ========================================= */
+:root {
+  --rs-primary-red: #a51c24;
+  --rs-dark-red: #7a131a;
+  --rs-steel-silver: #d1d6db;
+  --rs-bg-light: #ffffff;
+  --rs-bg-offwhite: #f8f9fa;
+  --rs-bg-luxury-dark: #121416;
+  --rs-bg-card-dark: #1c1f22;
+  --rs-text-light: #ffffff;
+  --rs-text-dark: #1a1d20;
+  --rs-text-muted: #5a6268;
+  --rs-font-heading: "Oswald", sans-serif;
+  --rs-font-body: "Poppins", sans-serif;
+  --rs-transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  font-family: var(--rs-font-body);
+  background-color: var(--rs-bg-light);
+  color: var(--rs-text-dark);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--rs-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.rs-header-wrap {
+  background: rgba(255, 255, 255, 0.98);
+}
+
+/* Unique Global Classes for About Page */
+.rs-abt-subtitle {
+  color: var(--rs-primary-red);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: inline-block;
+  position: relative;
+  padding-left: 45px;
+}
+
+.rs-abt-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--rs-primary-red);
+}
+
+.rs-abt-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 25px;
+  color: var(--rs-text-dark);
+}
+
+.rs-abt-title span {
+  color: var(--rs-primary-red);
+}
+
+.rs-abt-btn {
+  background: var(--rs-primary-red);
+  border: 2px solid var(--rs-primary-red);
+  color: var(--rs-text-light);
+  padding: 12px 30px;
+  font-family: var(--rs-font-heading);
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: var(--rs-transition-smooth);
+  text-transform: uppercase;
+  border-radius: 0;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.rs-abt-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--rs-text-dark);
+  z-index: -1;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-abt-btn:hover::before {
+  left: 0;
+}
+
+.rs-abt-btn:hover {
+  color: var(--rs-text-light) !important;
+  border-color: var(--rs-text-dark);
+}
+
+/* =========================================
+           1. INNER PAGE HERO BANNER
+           ========================================= */
+.rs-abt-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(18, 20, 22, 0.565),
+      rgba(18, 20, 22, 0.629)
+    ),
+    url("https://imgs.search.brave.com/1dKpA9cDgMwFqNmoxFIm_77wrOK6D33ssKgPxsGnXT8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90My5m/dGNkbi5uZXQvanBn/LzE0Lzg0LzQ1LzY4/LzM2MF9GXzE0ODQ0/NTY4NDlfN1NiNlgw/anVVdXo1TjFkNm5l/eE9abGFmRmRZT3B2/UGguanBn")
+      center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--rs-text-light);
+}
+
+.rs-abt-hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.rs-abt-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rs-abt-breadcrumb a {
+  color: var(--rs-text-light);
+  text-decoration: none;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-abt-breadcrumb a:hover {
+  color: var(--rs-primary-red);
+}
+
+.rs-abt-breadcrumb span {
+  color: var(--rs-primary-red);
+}
+
+/* =========================================
+           2. OUR STORY / LEGACY SECTION
+           ========================================= */
+.rs-abt-story-sec {
+  padding: 120px 0;
+  background-color: var(--rs-bg-light);
+  position: relative;
+}
+
+.rs-abt-story-img-grp {
+  position: relative;
+  z-index: 1;
+}
+
+.rs-abt-story-img-main {
+  width: 85%;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  position: relative;
+  z-index: 2;
+}
+
+.rs-abt-story-img-float {
+  position: absolute;
+  bottom: -40px;
+  right: 0;
+  width: 50%;
+  border: 10px solid var(--rs-bg-light);
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  z-index: 3;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-abt-story-img-grp:hover .rs-abt-story-img-float {
+  transform: translateY(-15px) scale(1.05);
+}
+
+.rs-abt-story-content {
+  padding-left: 40px;
+}
+
+.rs-abt-story-text {
+  font-size: 1.1rem;
+  color: var(--rs-text-muted);
+  line-height: 1.8;
+  margin-bottom: 25px;
+}
+
+.rs-abt-highlight-quote {
+  border-left: 4px solid var(--rs-primary-red);
+  padding: 20px 30px;
+  background: var(--rs-bg-offwhite);
+  font-style: italic;
+  font-size: 1.2rem;
+  color: var(--rs-text-dark);
+  margin: 35px 0;
+  font-weight: 500;
+}
+
+/* =========================================
+           3. CORE VALUES SECTION (Dark Theme)
+           ========================================= */
+.rs-abt-values-sec {
+  padding: 100px 0;
+  background-color: var(--rs-bg-luxury-dark);
+  color: var(--rs-text-light);
+  position: relative;
+}
+
+.rs-abt-values-sec .rs-abt-title {
+  color: var(--rs-text-light);
+}
+
+.rs-abt-value-card {
+  background-color: var(--rs-bg-card-dark);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 50px 40px;
+  text-align: center;
+  height: 100%;
+  transition: var(--rs-transition-smooth);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.rs-abt-value-card::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: var(--rs-primary-red);
+  z-index: -1;
+  transition: height 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.rs-abt-value-card:hover {
+  transform: translateY(-15px);
+  border-color: var(--rs-primary-red);
+  box-shadow: 0 20px 40px rgba(165, 28, 36, 0.3);
+}
+
+.rs-abt-value-card:hover::before {
+  height: 100%;
+}
+
+.rs-abt-value-icon {
+  width: 80px;
+  height: 80px;
+  background: rgba(165, 28, 36, 0.1);
+  color: var(--rs-primary-red);
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 25px;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-abt-value-card:hover .rs-abt-value-icon {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--rs-text-light);
+  transform: scale(1.1) rotateY(180deg);
+}
+
+.rs-abt-value-title {
+  font-family: var(--rs-font-heading);
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.rs-abt-value-desc {
+  font-size: 0.95rem;
+  color: var(--rs-text-gray);
+  line-height: 1.6;
+  margin: 0;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-abt-value-card:hover .rs-abt-value-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* =========================================
+           4. MILESTONES / LIVE COUNTER SECTION
+           ========================================= */
+.rs-abt-stats-sec {
+  padding: 100px 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(165, 28, 36, 0.95) 0%,
+      rgba(122, 19, 26, 0.95) 100%
+    ),
+    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop")
+      center/cover fixed;
+  color: var(--rs-text-light);
+  text-align: center;
+}
+
+.rs-abt-stat-box {
+  padding: 30px 20px;
+}
+
+.rs-abt-stat-num {
+  font-family: var(--rs-font-heading);
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.rs-abt-stat-num span {
+  color: var(--rs-bg-luxury-dark); /* Contrast color */
+}
+
+.rs-abt-stat-txt {
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0.9;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .rs-abt-hero-title {
+    font-size: 3rem;
+  }
+  .rs-abt-story-content {
+    padding-left: 0;
+    margin-top: 70px;
+  }
+  .rs-abt-story-img-float {
+    width: 60%;
+    right: auto;
+    left: 10%;
+    bottom: -30px;
+  }
+  .rs-abt-value-card {
+    margin-bottom: 20px;
+  }
+  .rs-abt-stat-box {
+    margin-bottom: 30px;
+  }
+}
+
+.rs-header-wrap {
+  background: rgba(255, 255, 255, 0.98);
+}

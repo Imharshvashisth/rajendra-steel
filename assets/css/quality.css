@@ -1,0 +1,478 @@
+/* =========================================
+           ROOT VARIABLES & GLOBAL STYLES
+           ========================================= */
+:root {
+  --rs-primary-red: #a51c24;
+  --rs-dark-red: #7a131a;
+  --rs-steel-silver: #d1d6db;
+  --rs-bg-light: #ffffff;
+  --rs-bg-offwhite: #f8f9fa;
+  --rs-bg-luxury-dark: #121416;
+  --rs-bg-card-dark: #1c1f22;
+  --rs-text-light: #ffffff;
+  --rs-text-dark: #1a1d20;
+  --rs-text-muted: #5a6268;
+  --rs-text-gray: #a0aab2;
+  --rs-font-heading: "Oswald", sans-serif;
+  --rs-font-body: "Poppins", sans-serif;
+  --rs-transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  font-family: var(--rs-font-body);
+  background-color: var(--rs-bg-light);
+  color: var(--rs-text-dark);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--rs-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Unique Global Classes for Quality Page */
+.rs-qual-subtitle {
+  color: var(--rs-primary-red);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: inline-block;
+  position: relative;
+  padding-left: 45px;
+}
+
+.rs-qual-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--rs-primary-red);
+}
+
+.rs-qual-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--rs-text-dark);
+}
+
+.rs-qual-title span {
+  color: var(--rs-primary-red);
+}
+
+.rs-qual-btn {
+  background: var(--rs-primary-red);
+  border: 2px solid var(--rs-primary-red);
+  color: var(--rs-text-light);
+  padding: 12px 35px;
+  font-family: var(--rs-font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: var(--rs-transition-smooth);
+  text-transform: uppercase;
+  border-radius: 0;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rs-qual-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--rs-text-dark);
+  z-index: -1;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-qual-btn:hover::before {
+  left: 0;
+}
+
+.rs-qual-btn:hover {
+  color: var(--rs-text-light) !important;
+  border-color: var(--rs-text-dark);
+}
+
+/* =========================================
+           1. INNER PAGE HERO BANNER
+           ========================================= */
+.rs-qual-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Precision/Quality Background */
+  background:
+    linear-gradient(to bottom, rgba(18, 20, 22, 0.7), rgba(18, 20, 22, 0.95)),
+    url("https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2070&auto=format&fit=crop")
+      center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--rs-text-light);
+}
+
+.rs-qual-hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.rs-qual-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rs-qual-breadcrumb a {
+  color: var(--rs-text-light);
+  text-decoration: none;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-qual-breadcrumb a:hover {
+  color: var(--rs-primary-red);
+}
+
+.rs-qual-breadcrumb span {
+  color: var(--rs-primary-red);
+}
+
+/* =========================================
+           2. QUALITY ASSURANCE OVERVIEW
+           ========================================= */
+.rs-qual-overview-sec {
+  padding: 120px 0;
+  background-color: var(--rs-bg-light);
+}
+
+.rs-qual-img-wrapper {
+  position: relative;
+  padding-left: 30px;
+  padding-bottom: 30px;
+  z-index: 1;
+}
+
+.rs-qual-img-wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  border: 8px solid var(--rs-bg-offwhite);
+  z-index: -1;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-qual-img-wrapper:hover::before {
+  border-color: var(--rs-steel-silver);
+  transform: translate(-10px, -10px);
+}
+
+.rs-qual-main-img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-qual-img-wrapper:hover .rs-qual-main-img {
+  transform: scale(1.02);
+}
+
+.rs-qual-text {
+  font-size: 1.05rem;
+  color: var(--rs-text-muted);
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+.rs-qual-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+}
+
+.rs-qual-list li {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--rs-text-dark);
+  margin-bottom: 18px;
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.rs-qual-list li i {
+  color: var(--rs-text-light);
+  font-size: 1rem;
+  background: var(--rs-primary-red);
+  padding: 6px;
+  border-radius: 50%;
+  margin-top: 2px;
+  box-shadow: 0 5px 15px rgba(165, 28, 36, 0.3);
+}
+
+/* =========================================
+           3. ADVANCED TESTING GRID
+           ========================================= */
+.rs-qual-test-sec {
+  padding: 100px 0 120px 0;
+  background-color: var(--rs-bg-offwhite);
+}
+
+.rs-qual-test-card {
+  background: var(--rs-bg-light);
+  padding: 50px 30px;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  height: 100%;
+  position: relative;
+  z-index: 1;
+  transition: var(--rs-transition-smooth);
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+}
+
+/* Left Border Expand Effect */
+.rs-qual-test-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: var(--rs-primary-red);
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  z-index: -1;
+}
+
+.rs-qual-test-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.rs-qual-test-card:hover::before {
+  width: 100%;
+}
+
+.rs-qual-test-icon {
+  width: 70px;
+  height: 70px;
+  background: var(--rs-bg-offwhite);
+  color: var(--rs-primary-red);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border-radius: 50%;
+  margin-bottom: 25px;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-qual-test-card:hover .rs-qual-test-icon {
+  background: var(--rs-text-light);
+  color: var(--rs-primary-red);
+  transform: scale(1.1);
+}
+
+.rs-qual-test-title {
+  font-family: var(--rs-font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--rs-text-dark);
+  margin-bottom: 15px;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-qual-test-desc {
+  font-size: 0.95rem;
+  color: var(--rs-text-muted);
+  line-height: 1.6;
+  margin: 0;
+  transition: var(--rs-transition-smooth);
+}
+
+/* Text turns white on hover due to red background fill */
+.rs-qual-test-card:hover .rs-qual-test-title,
+.rs-qual-test-card:hover .rs-qual-test-desc {
+  color: var(--rs-text-light);
+}
+
+/* =========================================
+           4. STANDARDS & CERTIFICATIONS (Dark Theme)
+           ========================================= */
+.rs-qual-cert-sec {
+  padding: 100px 0;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(18, 20, 22, 0.98) 0%,
+      rgba(18, 20, 22, 0.9) 100%
+    ),
+    url("https://images.unsplash.com/photo-1518709268805-4e9042af9f23?q=80&w=2069&auto=format&fit=crop")
+      center/cover fixed;
+  color: var(--rs-text-light);
+  position: relative;
+  text-align: center;
+}
+
+.rs-qual-cert-sec .rs-qual-title {
+  color: var(--rs-text-light);
+}
+
+.rs-qual-cert-desc {
+  color: var(--rs-text-gray);
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 50px auto;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.rs-qual-cert-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.rs-qual-cert-box {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 40px 20px;
+  border-radius: 4px;
+  transition: var(--rs-transition-smooth);
+  backdrop-filter: blur(5px);
+}
+
+.rs-qual-cert-box:hover {
+  background: rgba(165, 28, 36, 0.2);
+  border-color: var(--rs-primary-red);
+  transform: translateY(-10px);
+}
+
+.rs-qual-cert-box i {
+  font-size: 3rem;
+  color: var(--rs-primary-red);
+  margin-bottom: 20px;
+}
+
+.rs-qual-cert-name {
+  font-family: var(--rs-font-heading);
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+}
+
+.rs-qual-cert-text {
+  font-size: 0.9rem;
+  color: var(--rs-text-gray);
+  margin: 0;
+}
+
+/* =========================================
+           5. CTA STRIP
+           ========================================= */
+.rs-qual-cta-sec {
+  padding: 60px 0;
+  background-color: var(--rs-primary-red);
+  color: var(--rs-text-light);
+  text-align: center;
+}
+
+.rs-qual-cta-sec h2 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.rs-qual-cta-sec p {
+  font-size: 1.1rem;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+.rs-qual-cta-btn {
+  background: var(--rs-text-light);
+  color: var(--rs-primary-red);
+  padding: 12px 35px;
+  font-family: var(--rs-font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  display: inline-block;
+  transition: var(--rs-transition-smooth);
+  border: 2px solid var(--rs-text-light);
+}
+
+.rs-qual-cta-btn:hover {
+  background: transparent;
+  color: var(--rs-text-light);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+  .rs-qual-hero-title {
+    font-size: 3rem;
+  }
+  .rs-qual-overview-sec {
+    padding: 80px 0;
+  }
+  .rs-qual-img-wrapper {
+    padding-left: 0;
+    padding-bottom: 0;
+    margin-bottom: 40px;
+  }
+  .rs-qual-img-wrapper::before {
+    display: none;
+  }
+
+  .rs-qual-cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .rs-qual-cta-sec {
+    padding: 40px 0;
+  }
+  .rs-qual-cta-sec h2 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .rs-qual-cert-grid {
+    grid-template-columns: 1fr;
+  }
+}

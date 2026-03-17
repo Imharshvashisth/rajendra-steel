@@ -1,0 +1,343 @@
+/* =========================================
+           ROOT VARIABLES & GLOBAL STYLES
+           ========================================= */
+:root {
+  --rs-primary-red: #a51c24;
+  --rs-dark-red: #7a131a;
+  --rs-steel-silver: #d1d6db;
+  --rs-bg-light: #ffffff;
+  --rs-bg-offwhite: #f8f9fa;
+  --rs-bg-luxury-dark: #121416;
+  --rs-bg-card-dark: #1c1f22;
+  --rs-text-light: #ffffff;
+  --rs-text-dark: #1a1d20;
+  --rs-text-muted: #5a6268;
+  --rs-text-gray: #a0aab2;
+  --rs-font-heading: "Oswald", sans-serif;
+  --rs-font-body: "Poppins", sans-serif;
+  --rs-transition-smooth: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+body {
+  font-family: var(--rs-font-body);
+  /* Set to light theme */
+  background-color: var(--rs-bg-light);
+  color: var(--rs-text-dark);
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--rs-font-heading);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Unique Global Classes for Applications Page */
+.rs-app-subtitle {
+  color: var(--rs-primary-red);
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 15px;
+  display: inline-block;
+  position: relative;
+  padding-left: 45px;
+}
+
+.rs-app-subtitle::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 2px;
+  background-color: var(--rs-primary-red);
+}
+
+.rs-app-title {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--rs-text-dark);
+}
+
+.rs-app-title span {
+  color: var(--rs-primary-red);
+}
+
+.rs-app-btn {
+  background: var(--rs-primary-red);
+  border: 2px solid var(--rs-primary-red);
+  color: var(--rs-text-light);
+  padding: 15px 40px;
+  font-family: var(--rs-font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  transition: var(--rs-transition-smooth);
+  text-transform: uppercase;
+  border-radius: 0;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.rs-app-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: var(--rs-text-dark);
+  z-index: -1;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-app-btn:hover::before {
+  left: 0;
+}
+
+.rs-app-btn:hover {
+  color: var(--rs-text-light) !important;
+  border-color: var(--rs-text-dark);
+}
+
+/* =========================================
+           1. INNER PAGE HERO BANNER
+           ========================================= */
+.rs-app-hero {
+  position: relative;
+  height: 70vh;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Industrial pipeline background */
+  background:
+    linear-gradient(to bottom, rgba(18, 20, 22, 0.51), rgba(18, 20, 22, 0.803)),
+    url("https://imgs.search.brave.com/4BZmW1WrsbKfP3e7qsyaKBE4aMwNcOtIsAUZQSa8xE8/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMucGV4ZWxzLmNv/bS92aWRlb3MvNTA1/NTYwOC9wZXhlbHMt/cGhvdG8tNTA1NTYw/OC5qcGVnP2F1dG89/Y29tcHJlc3MmY3M9/dGlueXNyZ2ImZHBy/PTEmdz01MDA")
+      center/cover no-repeat fixed;
+  text-align: center;
+  color: var(--rs-text-light);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.rs-app-hero-title {
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.rs-app-breadcrumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.rs-app-breadcrumb a {
+  color: var(--rs-text-light);
+  text-decoration: none;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-app-breadcrumb a:hover {
+  color: var(--rs-primary-red);
+}
+
+.rs-app-breadcrumb span {
+  color: var(--rs-primary-red);
+}
+
+/* =========================================
+           2. INDUSTRIES GRID SECTION
+           ========================================= */
+.rs-app-grid-sec {
+  padding: 100px 0;
+  background-color: var(--rs-bg-light);
+}
+
+.rs-app-desc {
+  color: var(--rs-text-muted);
+  font-size: 1.1rem;
+  max-width: 800px;
+  line-height: 1.6;
+  margin-bottom: 50px;
+  font-weight: 300;
+}
+
+.rs-app-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+}
+
+/* Application Card Styles */
+.rs-app-card {
+  display: block;
+  text-decoration: none;
+  cursor: pointer;
+  group: card;
+}
+
+.rs-app-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/3; /* Keeps all images uniform */
+  overflow: hidden;
+  position: relative;
+  background-color: var(--rs-bg-offwhite);
+  margin-bottom: 15px;
+  border-bottom: 3px solid transparent;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-app-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Slight dark filter by default for premium look */
+  filter: brightness(0.8) grayscale(20%);
+  transition:
+    transform 0.8s cubic-bezier(0.25, 0.8, 0.25, 1),
+    filter 0.5s;
+}
+
+/* Hover Effects */
+.rs-app-card:hover .rs-app-img-wrap {
+  border-bottom-color: var(--rs-primary-red);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.rs-app-card:hover .rs-app-img {
+  transform: scale(1.1);
+  filter: brightness(1) grayscale(0%);
+}
+
+.rs-app-title-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 10px;
+  position: relative;
+}
+
+/* Animated Red Line on Hover */
+.rs-app-title-wrap::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 1px;
+  background-color: var(--rs-primary-red);
+  transition: width 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.rs-app-card:hover .rs-app-title-wrap::after {
+  width: 100%;
+}
+
+.rs-app-card-title {
+  font-family: var(--rs-font-body);
+  font-size: 1.1rem;
+  color: var(--rs-text-dark);
+  font-weight: 500;
+  margin: 0;
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-app-card:hover .rs-app-card-title {
+  color: var(--rs-primary-red);
+}
+
+.rs-app-icon {
+  color: var(--rs-primary-red);
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateX(-10px);
+  transition: var(--rs-transition-smooth);
+}
+
+.rs-app-card:hover .rs-app-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* =========================================
+           3. CTA STRIP (Extra Sexy Touch)
+           ========================================= */
+.rs-app-cta-sec {
+  padding: 80px 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(165, 28, 36, 0.95) 0%,
+      rgba(122, 19, 26, 0.95) 100%
+    ),
+    url("https://images.unsplash.com/photo-1504307651254-35680f356dfd?q=80&w=2070&auto=format&fit=crop")
+      center/cover fixed;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.rs-app-cta-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: var(--rs-text-light);
+}
+
+.rs-app-cta-desc {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 1199px) {
+  .rs-app-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 991px) {
+  .rs-app-hero-title {
+    font-size: 3rem;
+  }
+  .rs-app-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rs-app-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 575px) {
+  .rs-app-grid {
+    grid-template-columns: 1fr;
+  }
+  .rs-app-cta-title {
+    font-size: 2rem;
+  }
+}
