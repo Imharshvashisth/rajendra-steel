@@ -1697,7 +1697,7 @@ h6 {
 .rs-footer-bottom a {
   color: var(--rs-text-gray);
   text-decoration: none;
-  margin-left: 20px;
+  margin-left: 5px;
   transition: var(--rs-transition-smooth);
 }
 
